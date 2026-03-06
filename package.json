@@ -6,16 +6,17 @@
   "scripts": {
     "build": "cd client && npm install && npm run build",
     "start": "node server.js",
-    "dev": "concurrently \"node server.js\" \"cd client && npm run dev\""
+    "dev": "concurrently \"node server.js\" \"cd client && npm run dev\"",
+    "postinstall": "cd client && npm install"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "better-sqlite3": "^12.6.2",
     "concurrently": "^9.2.1",
     "cors": "^2.8.6",
-    "express": "^5.2.1",
-    "sqlite3": "^5.1.7"
+    "express": "^5.2.1"
   }
 }
