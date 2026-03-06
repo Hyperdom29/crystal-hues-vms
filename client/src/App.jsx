@@ -1001,6 +1001,33 @@ function InfoRow({ icon, label, value }) {
 /* ═══════════════════════════════════════════════════
    ONBOARDING WIZARD
 ═══════════════════════════════════════════════════ */
+
+function F({ label, req, children }) {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+      <label style={{ fontSize: 10, fontFamily: "'Barlow Condensed', sans-serif",
+        fontWeight: 700, color: C.t3, letterSpacing: "0.09em", textTransform: "uppercase" }}>
+        {label}{req && <span style={{ color: C.orange }}> *</span>}
+      </label>
+      {children}
+    </div>
+  );
+}
+
+function ChipBtn({ label, sel, color, onClick }) {
+  return (
+    <button onClick={onClick} style={{ padding: "5px 12px", borderRadius: 6,
+      border: `1px solid ${sel ? (color || C.orange) : C.border}`,
+      background: sel ? (color ? `${color}14` : C.orangeDim) : C.elev,
+      color: sel ? (color || C.orange) : C.t2,
+      cursor: "pointer", fontSize: 12,
+      fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700,
+      transition: "all 0.1s" }}>
+      {label}
+    </button>
+  );
+}
+
 const BLANK_FORM = {
   name:"", email:"", phone:"", location:"", type:"",
   languages:[], services:[],
@@ -1088,34 +1115,12 @@ function OnboardingView({ onVendorCreated }) {
     </div>
   );
 
-  const F = ({ label, req, children }) => (
-    <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-      <label style={{ fontSize: 10, fontFamily: "'Barlow Condensed', sans-serif",
-        fontWeight: 700, color: C.t3, letterSpacing: "0.09em", textTransform: "uppercase" }}>
-        {label}{req && <span style={{ color: C.orange }}> *</span>}
-      </label>
-      {children}
-    </div>
-  );
-
   const inp = {
     background: C.elev, border: `1px solid ${C.border}`,
     borderRadius: 8, padding: "9px 13px", color: C.t1,
     fontFamily: "'DM Sans', sans-serif", fontSize: 13,
     outline: "none", width: "100%",
   };
-
-  const ChipBtn = ({ label, sel, color, onClick }) => (
-    <button onClick={onClick} style={{ padding: "5px 12px", borderRadius: 6,
-      border: `1px solid ${sel ? (color || C.orange) : C.border}`,
-      background: sel ? (color ? `${color}14` : C.orangeDim) : C.elev,
-      color: sel ? (color || C.orange) : C.t2,
-      cursor: "pointer", fontSize: 12,
-      fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700,
-      transition: "all 0.1s" }}>
-      {label}
-    </button>
-  );
 
   return (
     <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
