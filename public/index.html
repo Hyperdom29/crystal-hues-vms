@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Crystal Hues – Vendor Registration</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    header {
+      background-color: #2E60A0;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      padding: 40px;
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      border-radius: 6px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      font-size: 14px;
+    }
+
+    button {
+      margin-top: 25px;
+      width: 100%;
+      background-color: #E68C48;
+      color: white;
+      border: none;
+      padding: 15px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Vendor Registration</h1>
+    <p>Crystal Hues Limited</p>
+  </header>
+
+  <main>
+    <form action="/register" method="POST">
+      <label>Vendor Name</label>
+      <input type="text" name="vendorName" required />
+
+      <label>Email</label>
+      <input type="email" name="email" required />
+
+      <label>Vendor Type</label>
+      <select name="vendorType" required>
+        <option value="">Select</option>
+        <option value="Individual">Individual</option>
+        <option value="Company">Company</option>
+      </select>
+
+      <button type="submit">Submit Registration</button>
+    </form>
+  </main>
+
+</body>
+</html>
