@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently -n \"api,client\" -c \"cyan,magenta\" \"node server.js\" \"npm run dev --prefix client\"",
     "build": "cd client && npm install && npm run build",
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "concurrently \"node server.js\" \"cd client && npm run dev\""
   },
   "keywords": [],
   "author": "",
